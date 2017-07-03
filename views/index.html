@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>微博显示</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <script src="/scripts/jquery-1.7.2.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.2.6/vue.js"></script>
+    <script src="/scripts/index.js"></script>
+    <link href="/styles/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/site.css" rel="stylesheet">
+    <style>
+        #app {
+            margin: 50px auto;
+            width: 1000px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="portlet-body">
+            <table class="table table-striped table-bordered table-hover">
+                <tbody v-for="blog in blogs" id="tableResult">
+                    <tr>
+                        <td>
+                            <div v-html="blog.MBlog.id"></div>
+                            <div v-html="blog.MBlog.UserDisplayName"></div>
+                            <div v-html="blog.MBlog.blogBodyHtml"></div>
+                            <div>
+                                <template v-for="img in blog.MBlog.ImgUrlList">
+                                    <img v-bind:src="img" />
+                                </template>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
