@@ -11,6 +11,8 @@
 > go get -u google.golang.org/grpc
 > go get -u github.com/golang/protobuf/protoc-gen-go
 ```
+如果成功，会在GOPATH/bin下生成protoc-gen-go.exe文件
+
 ## 3. 下载 protoc，去到下载页面找到对应包
 https://github.com/protocolbuffers/protobuf/releases
 
