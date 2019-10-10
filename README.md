@@ -20,6 +20,8 @@ windows：下载 protoc-3.10.0-win64.zip
 
 linux：protoc-3.10.0-linux-x86_64.zip
 
+解压可以得到一个protoc文件，下一步需要用到
+
 ## 4. 执行 generate_hello.bat 生成 helloworld.pb.go
 修改 generate_hello.bat 里面的 protoc 文件的存放目录
 ```
