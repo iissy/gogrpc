@@ -34,8 +34,8 @@ setlocal
 @rem enter this directory
 cd /d %~dp0
 
-set TOOLS_PATH=packages\Grpc.Tools.1.1.0\tools\windows_x64
+set TOOLS_PATH=C:\Users\pinbor\.nuget\packages\grpc.tools\2.23.0\tools\windows_x64
 
-protoc -I protos protos/helloworld.proto --go_out=plugins=grpc:src/helloworld
+%TOOLS_PATH%\protoc -I protos protos/helloworld.proto --go_out=plugins=grpc:src/helloworld
 
 endlocal
