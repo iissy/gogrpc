@@ -21,6 +21,11 @@ windows：下载 protoc-3.10.0-win64.zip
 linux：protoc-3.10.0-linux-x86_64.zip
 
 ## 4. 执行 generate_hello.bat 生成 helloworld.pb.go
+修改 generate_hello.bat 里面的 protoc 文件的存放目录
+```
+set TOOLS_PATH=你的protoc文件的存放目录
+```
+
 执行前，你可以先删除 src/helloworld/helloworld.pd.go，然后自己生成
 ```
 > .\generate_hello.bat
