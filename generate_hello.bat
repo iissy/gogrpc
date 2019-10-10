@@ -36,6 +36,6 @@ cd /d %~dp0
 
 set TOOLS_PATH=packages\Grpc.Tools.1.1.0\tools\windows_x64
 
-protoc -I protos protos/helloworld.proto  --go_out=plugins=grpc:src/helloworld
+protoc -I protos protos/helloworld.proto --go_out=plugins=grpc:src/helloworld
 
 endlocal

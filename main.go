@@ -1,26 +1,27 @@
 package main
 
 import (
-    "log"
-    "net"
-    "golang.org/x/net/context"
-    "google.golang.org/grpc"
-    pb "helloworld"
-    "google.golang.org/grpc/reflection"
+	"log"
+	"net"
+
+	pb "giissy/src/helloworld"
+	"golang.org/x/net/context"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
- 
+
 const (
-    port = ":50052"
+	port = ":50052"
 )
- 
-type server struct {}
- 
+
+type server struct{}
+
 func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-    return &pb.HelloReply{Message: "Hello " + in.Name}, nil
+	return &pb.HelloReply{Message: "Hello " + in.Name}, nil
 }
- 
+
 func main() {
-    lis, err := net.Listen("tcp", port)
+	lis, err := net.Listen("tcp", port)
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}

@@ -4,14 +4,14 @@ import (
 	"log"
 	"os"
 
-	pb "helloworld"
+	pb "giissy/src/helloworld"
 
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 )
 
 const (
-	address     = "192.168.1.76:50052"
+	address     = "0.0.0.0:50052"
 	defaultName = "world"
 )
 
