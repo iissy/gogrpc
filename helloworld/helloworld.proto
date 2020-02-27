@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "github.com/iissy/gogrpc/messages/messages.proto";
+ 
+package helloworld;
+ 
+// The greeter service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (messages.HelloRequest) returns (messages.HelloReply) {}
+}

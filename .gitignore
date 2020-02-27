@@ -1,0 +1,6 @@
+pkg/
+.vscode/
+debug
+server
+.exe
+.idea/

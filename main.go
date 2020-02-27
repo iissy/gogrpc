@@ -4,7 +4,8 @@ import (
 	"log"
 	"net"
 
-	pb "giissy/src/helloworld"
+	"github.com/iissy/gogrpc/helloworld"
+	"github.com/iissy/gogrpc/messages"
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -16,8 +17,8 @@ const (
 
 type server struct{}
 
-func (s *server) SayHello(ctx context.Context, in *pb.HelloRequest) (*pb.HelloReply, error) {
-	return &pb.HelloReply{Message: "Hello " + in.Name}, nil
+func (s *server) SayHello(ctx context.Context, in *messages.HelloRequest) (*messages.HelloReply, error) {
+	return &messages.HelloReply{Message: "Hello " + in.Name}, nil
 }
 
 func main() {
@@ -25,8 +26,9 @@ func main() {
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
+
 	s := grpc.NewServer()
-	pb.RegisterGreeterServer(s, &server{})
+	helloworld.RegisterGreeterServer(s, &server{})
 	reflection.Register(s)
 	if err := s.Serve(lis); err != nil {
 		log.Fatalf("failed to serve: %v", err)
